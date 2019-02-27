@@ -1,51 +1,44 @@
 # helloworld
 
-_This generated README.md file loosely follows a [popular template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)._
-
-One paragraph of project description goes here.
+A simple Hello World using the [atlas app toolkit](https://github.com/infobloxopen/atlas-app-toolkit)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Guide [here](https://github.com/infobloxopen/atlas-cli/wiki). 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+In addition to the guide above, make sure to run the command
 
 ```
-Give examples
+go get -u github.com/golang/protobuf/protoc-gen-go
 ```
+Also, your $GOPATH should be set to ~/go, and $GOBIN should be set to ~/go/bin
 
 ### Installing
 
-A step-by-step series of examples that tell you have to get a development environment running.
-
-Say what the step will be.
+After the above steps are complete, go to your desired directory and run the following: 
 
 ```
-Give the example
+atlas init-app -name helloworld -gateway
 ```
 
-And repeat.
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
+From there, you should be able to open the directory structure in your IDE of choice.
 
 ## Deployment
 
-Add additional notes about how to deploy this application. Maybe list some common pitfalls or debugging strategies.
+In the helloworld directory, execute the following to run the service:
+
+```
+go run cmd/server/*.go
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system.
+Open Postman, and send a `GET` request to `0.0.0.0:8080/helloworld/v1/version`. This should return the version of the project, which is `0.0.1`.
 
-```
-Give an example
-```
+Sending a `POST` request with a JSON body consisting of something like `{ "name": "Broc" }` should return `"Hello Broc"`
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/bwoodworthIBLX/helloworld/tags).
+I don't anticipate updating this code. It shall stay at 0.0.1
