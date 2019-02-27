@@ -37,7 +37,7 @@ go run cmd/server/*.go
 
 Open Postman, and send a `GET` request to `0.0.0.0:8080/helloworld/v1/version`. This should return the version of the project, which is `0.0.1`.
 
-Sending a `POST` request with a JSON body consisting of something like `{ "name": "Broc" }` should return `"Hello Broc"`
+Sending a `POST` request to `0.0.0.0:8080/helloworld/v1/hello` with a JSON body consisting of something like `{ "name": "Broc" }` should return `"Hello Broc"`
 
 ## Versioning
 
