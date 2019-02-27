@@ -1,0 +1,46 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "title": "github.com/bwoodworthIBLX/helloworld/pkg/pb/service.proto",
+    "version": "version not set"
+  },
+  "paths": {
+    "/version": {
+      "get": {
+        "tags": [
+          "Helloworld"
+        ],
+        "operationId": "HelloworldGetVersion",
+        "responses": {
+          "200": {
+            "description": "GET operation response",
+            "schema": {
+              "$ref": "#/definitions/serviceVersionResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "serviceVersionResponse": {
+      "description": "TODO: Structure your own protobuf messages. Each protocol buffer message is a \nsmall logical record of information, containing a series of name-value pairs.",
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
