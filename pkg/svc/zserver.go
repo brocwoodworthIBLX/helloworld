@@ -46,6 +46,11 @@ func (server) GetVersion(context.Context, *empty.Empty) (*pb.VersionResponse, er
 	return &pb.VersionResponse{Version: version}, nil
 }
 
+func (server) HelloWorld(ctx context.Context, req *pb.HelloRequest) (*pb.HelloResponse, error) {
+	name := req.GetName()
+	return &pb.HelloResponse{Greeting: "Hello " + name}, nil
+}
+
 // NewBasicServer returns an instance of the default server interface
 func NewBasicServer() (pb.HelloworldServer, error) {
 	return &server{}, nil

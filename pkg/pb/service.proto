@@ -31,6 +31,14 @@ message VersionResponse {
   string version = 1;
 }
 
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string greeting = 1;
+}
+
 
 
 // TODO: Define the Helloworld service and its methods. Feel free
@@ -41,6 +49,13 @@ service Helloworld {
     // TODO: Provide mappings between REST endpoints and service methods.
     option (google.api.http) = {
       get: "/version"
+    };
+  }
+
+  rpc HelloWorld (HelloRequest) returns (HelloResponse) {
+    option (google.api.http) = {
+      post: "/hello"
+      body: "*"
     };
   }
 

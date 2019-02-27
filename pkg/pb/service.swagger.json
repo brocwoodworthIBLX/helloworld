@@ -15,6 +15,32 @@
     "version": "version not set"
   },
   "paths": {
+    "/hello": {
+      "post": {
+        "tags": [
+          "Helloworld"
+        ],
+        "operationId": "HelloworldHelloWorld",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceHelloRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "POST operation response",
+            "schema": {
+              "$ref": "#/definitions/serviceHelloResponse"
+            }
+          }
+        }
+      }
+    },
     "/version": {
       "get": {
         "tags": [
@@ -33,6 +59,22 @@
     }
   },
   "definitions": {
+    "serviceHelloRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "serviceHelloResponse": {
+      "type": "object",
+      "properties": {
+        "greeting": {
+          "type": "string"
+        }
+      }
+    },
     "serviceVersionResponse": {
       "description": "TODO: Structure your own protobuf messages. Each protocol buffer message is a \nsmall logical record of information, containing a series of name-value pairs.",
       "type": "object",
